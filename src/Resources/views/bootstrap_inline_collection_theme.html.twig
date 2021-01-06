@@ -1,0 +1,51 @@
+{% extends '@OnlinqFormCollection/collection_theme.html.twig' %}
+
+{%- block collection_widget -%}
+  {%- set allow_move = allow_move ?? attr['allow-move'] ?? false -%}
+  {%- set attr = attr|merge({
+    'allow-add': allow_add,
+    'allow-delete': allow_delete,
+    'allow-move': allow_move,
+    'prefix': form.vars.full_name,
+  }) -%}
+
+  <onlinq-collection {{ block('widget_container_attributes') }}>
+    {%- if prototype is defined and not prototype.rendered -%}
+      <template collection-prototype>
+        {{ form_row(prototype) }}
+      </template>
+    {%- endif -%}
+
+    {%- set children = form|filter(child => not child.rendered) -%}
+    {%- for child in children -%}
+      <onlinq-collection-entry collection-index="{{ child.vars.name }}">
+        {{- form_row(child) -}}
+      </onlinq-collection-entry>
+    {%- endfor -%}
+
+    <div slot="add">
+      {%- if allow_add -%}
+        <button type="button" class="btn btn-light" collection-add>Add</button>
+      {%- endif -%}
+    </div>
+    {{- form_rest(form) -}}
+  </onlinq-collection>
+{%- endblock collection_widget -%}
+
+{%- block collection_entry_row -%}
+  <div class="d-flex justify-content-between align-items-start">
+    <div class="flex-grow-1">
+      {{- block('form_row') -}}
+    </div>
+    <div class="d-flex">
+      {%- if form.parent.vars.allow_move -%}
+        <button type="button" class="btn btn-light ml-2" collection-move-up>&uparrow;</button>
+        <button type="button" class="btn btn-light ml-2" collection-move-down>&downarrow;</button>
+      {%- endif -%}
+      {%- if form.parent.vars.allow_delete -%}
+        <button type="button" class="btn btn-light ml-2" collection-delete>Delete</button>
+      {%- endif -%}
+    </div>
+  </div>
+  <div slot="actions"></div>
+{%- endblock collection_entry_row -%}

@@ -1,0 +1,22 @@
+{
+    "name": "onlinq/form-collection-bundle",
+    "description": "Symfony bundle to build forms with Onlinq Form Collection web components",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Goudriaan",
+            "email": "tim@onlinq.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Onlinq\\FormCollectionBundle\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/form": "^4.4|^5.0",
+        "symfony/framework-bundle": "^4.4|^5.0",
+        "symfony/twig-bundle": "^4.4|^5.0"
+    }
+}
