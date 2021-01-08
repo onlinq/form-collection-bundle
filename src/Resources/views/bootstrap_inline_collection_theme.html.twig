@@ -12,7 +12,7 @@
   <onlinq-collection {{ block('widget_container_attributes') }}>
     {%- if prototype is defined and not prototype.rendered -%}
       <template collection-prototype>
-        {{ form_row(prototype) }}
+        {{- form_row(prototype) -}}
       </template>
     {%- endif -%}
 
