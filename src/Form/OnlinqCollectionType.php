@@ -17,6 +17,8 @@ class OnlinqCollectionType extends AbstractType
     {
         $view->vars = array_replace($view->vars, [
             'allow_move' => $options['allow_move'],
+            'min' => $options['min'],
+            'max' => $options['max'],
         ]);
     }
 
@@ -24,6 +26,8 @@ class OnlinqCollectionType extends AbstractType
     {
         $resolver->setDefaults([
             'allow_move' => false,
+            'min' => 0,
+            'max' => 0,
         ]);
     }
 

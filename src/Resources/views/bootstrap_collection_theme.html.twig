@@ -2,10 +2,12 @@
 
 {%- block collection_widget -%}
   {%- set attr = attr|merge({
+    'name': form.vars.full_name,
     'allow-add': allow_add,
     'allow-delete': allow_delete,
     'allow-move': allow_move ?? attr['allow-move'] ?? false,
-    'name': form.vars.full_name,
+    'min': min ?? attr['min'] ?? 0,
+    'max': max ?? attr['max'] ?? 0,
   }) -%}
 
   <onlinq-collection {{ block('widget_container_attributes') }}>
