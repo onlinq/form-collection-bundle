@@ -3,7 +3,7 @@
     'allow-add': allow_add,
     'allow-delete': allow_delete,
     'allow-move': allow_move ?? attr['allow-move'] ?? false,
-    'prefix': form.vars.full_name,
+    'name': form.vars.full_name,
   }) -%}
 
   <onlinq-collection {{ block('widget_container_attributes') }}>
