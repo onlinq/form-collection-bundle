@@ -34,15 +34,16 @@
   {%- set allow_move = form.parent.vars.allow_move ?? form.parent.vars.attr['allow-move'] ?? false -%}
 
   {{- block('form_row') -}}
-  <div slot="actions">
-    {%- if allow_move -%}
-      <button type="button" class="collection-move-up" collection-move-up>&uparrow;</button>
-      <button type="button" class="collection-move-down" collection-move-down>&downarrow;</button>
-    {%- endif -%}
-    {%- if form.parent.vars.allow_delete -%}
-      <button type="button" class="collection-delete" collection-delete>Delete</button>
-    {%- endif -%}
-  </div>
+
+  <span slot="move-up">
+    <button type="button" class="collection-move-up" collection-move-up>&uparrow;</button>
+  </span>
+  <span slot="move-down">
+    <button type="button" class="collection-move-down" collection-move-down>&downarrow;</button>
+  </span>
+  <span slot="delete">
+    <button type="button" class="collection-delete" collection-delete>Delete</button>
+  </span>
 {%- endblock collection_entry_row -%}
 
 {%- block collection_entry_label -%}
