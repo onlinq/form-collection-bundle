@@ -23,9 +23,7 @@
     {%- endfor -%}
 
     <div slot="add">
-      {%- if allow_add -%}
-        <button type="button" class="btn btn-light" collection-add>Add</button>
-      {%- endif -%}
+      <button type="button" class="btn btn-light" collection-add>Add</button>
     </div>
 
     {{- form_rest(form) -}}
@@ -33,8 +31,6 @@
 {%- endblock collection_widget -%}
 
 {%- block collection_entry_row -%}
-  {%- set allow_move = form.parent.vars.allow_move ?? form.parent.vars.attr['allow-move'] ?? false -%}
-
   {{- block('form_row') -}}
 
   <span slot="move-up">
