@@ -7,6 +7,7 @@ It allows [form collections][form-collections] to be manipulated through
 JavaScript and customizable buttons.
 
 ## Installation
+
 Onlinq Form Collection Bundle requires PHP 7.2+ and Symfony 4.4+.
 
 Install this bundle using Composer and Symfony Flex:
@@ -35,10 +36,12 @@ bottom of your page with:
 <script src="{{ asset('bundles/onlinqformcollection/onlinq-collection.js') }}"></script>
 ```
 
+Read on to start using the bundle immediately or visit the [documentation](./docs).
+
 ## Usage
 
 The Onlinq Form Collection web components are enabled when a compatible form
-theme has been loaded. The easiest way to manipulate the resulting form
+theme has been loaded. The easiest way to configure the resulting form
 collection is by using the built-in form type that can be used as a drop-in
 replacement for the Symfony [`CollectionType`][collection-type] class:
 
@@ -58,7 +61,7 @@ class TaskType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true,
                 'allow_move' => true,
-           ])
+            ])
             // ...
         ;
     }
@@ -72,15 +75,10 @@ class TaskType extends AbstractType
 The bundle includes multiple built-in form themes to make collections look great
 without having to create your own styling:
 
-- `@OnlinqFormCollection/collection_theme.html.twig`  
-  Enables the web components with minimal custom styling.
-- `@OnlinqFormCollection/bootstrap_collection_theme.html.twig`  
-  Enables the web components with custom styling for Bootstrap 4+.
-- `@OnlinqFormCollection/bootstrap_inline_collection_theme.html.twig`  
-  Enables the web components with custom styling for Bootstrap 4+, featuring
-  a flexbox layout to show the entry actions inline.
+- `@OnlinqFormCollection/collection_theme.html.twig`
+- `@OnlinqFormCollection/bootstrap_collection_theme.html.twig`
 
-Learn more about form themes in the [Symfony documentation][form-themes].
+Learn more about the built-in form themes in the [documentation](./docs/getting-started.md#collection-form-themes).
 
 ### Using a JavaScript bundler
 
@@ -100,9 +98,6 @@ Import the package in the project's JavaScript assets:
 
 import '@onlinq/form-collection';
 ```
-
-Learn more about the available JavaScript integration in the [Onlinq Form
-Collection documentation][component].
 
 [component]: https://github.com/onlinq/form-collection
 [form-collections]: https://symfony.com/doc/current/form/form_collections.html
