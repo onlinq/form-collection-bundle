@@ -25,7 +25,9 @@ class OnlinqCollectionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'allow_move' => false,
+            'allow_add' => true,
+            'allow_delete' => true,
+            'allow_move' => true,
             'min' => 0,
             'max' => 0,
         ]);
