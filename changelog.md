@@ -1,5 +1,11 @@
 # Changelog
 
+# 0.1.2 (2021-09-15)
+
+* Added Symfony Flex integration.
+* Updated web components distribution to version 0.1.3.
+* Added Bootstrap 5 form theme.
+
 # 0.1.1 (2021-02-02)
 
 * Removed `bootstrap_inline_collection_theme.html.twig` in favor of CSS custom
