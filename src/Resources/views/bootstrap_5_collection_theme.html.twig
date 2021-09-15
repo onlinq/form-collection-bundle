@@ -1,0 +1,15 @@
+{% use '@OnlinqFormCollection/bootstrap_collection_theme.html.twig' %}
+
+{%- block collection_entry_row -%}
+  {{- block('form_row') -}}
+
+  <span slot="move-up">
+    <button type="button" class="btn btn-light me-2" collection-move-up>&uparrow;</button>
+  </span>
+  <span slot="move-down">
+    <button type="button" class="btn btn-light me-2" collection-move-down>&downarrow;</button>
+  </span>
+  <span slot="delete">
+    <button type="button" class="btn btn-light me-2" collection-delete>Delete</button>
+  </span>
+{%- endblock collection_entry_row -%}
