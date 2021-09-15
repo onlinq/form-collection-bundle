@@ -1,6 +1,7 @@
 {
     "name": "onlinq/form-collection-bundle",
     "description": "Symfony bundle to build forms with Onlinq Form Collection web components",
+    "keywords": ["symfony-ux"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
