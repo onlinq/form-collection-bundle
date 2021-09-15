@@ -9,15 +9,18 @@ composer require @onlinq/form-collection-bundle
 ```
 
 If you're using Symfony Flex (enabled by default for new Symfony projects) the
-bundle will be included in your project automatically.
+bundle will be registered in your project automatically.
 
 Note that Onlinq Form Collection Bundle requires PHP 7.2+ and Symfony 4.4 or
 Symfony 5.x.
 
 Additionally, you'll need to include the Onlinq Form Collection web components'
-JavaScript on your form pages. The recommended way to install the web components
-is through a package bundler like Webpack, but they're also available as public
-assets provided by the bundle after running `bin/console assets:install`:
+JavaScript on your form pages. If you're using Symfony Flex and installed
+Symfony's `WebpackEncoreBundle` in your project, the assets are automatically
+added to your compiled assets through the Stimulus integration of Webpack Encore.
+
+The web components are also available as assets provided by this bundle after
+running `bin/console assets:install`:
 
 ```html
 <script src="{{ asset('bundles/onlinqformcollection/onlinq-collection.js') }}"></script>
