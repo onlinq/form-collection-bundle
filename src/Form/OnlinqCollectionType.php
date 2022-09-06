@@ -1,5 +1,6 @@
 <?php
-/**
+
+/*
  * Copyright Onlinq B.V.
  */
 
