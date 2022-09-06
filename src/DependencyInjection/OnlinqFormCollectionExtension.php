@@ -17,7 +17,6 @@ class OnlinqFormCollectionExtension extends Extension
         $container
             ->setDefinition(OnlinqCollectionType::class, new Definition(OnlinqCollectionType::class))
             ->addTag('form.type')
-            ->setPublic(false)
-        ;
+            ->setPublic(false);
     }
 }

@@ -1,0 +1,32 @@
+{% use '@OnlinqFormCollection/collection_theme.html.twig' %}
+
+{%- block collection_widget -%}
+  {%- set attr = attr|merge({
+    'name': form.vars.full_name,
+    'actions': collection_actions,
+    'actionlist': collection_action_list,
+    'min': min ?? attr['min'] ?? 0,
+    'max': max ?? attr['max'] ?? 0,
+  }) -%}
+
+  <onlinq-collection {{ block('widget_container_attributes') }}>
+    {%- if prototype is defined and not prototype.rendered -%}
+      <template data-collection-prototype>
+        {{- form_row(prototype) -}}
+      </template>
+    {%- endif -%}
+
+    {%- set children = form|filter(child => not child.rendered) -%}
+    {%- for child in children -%}
+      <onlinq-collection-entry collection="{{ form.vars.full_name }}" collection-index="{{ child.vars.name }}">
+        {{- form_row(child) -}}
+      </onlinq-collection-entry>
+    {%- endfor -%}
+
+    <div slot="add">
+      <button is="onlinq-collection-add" type="button" class="btn btn-light" data-collection="{{ form.vars.full_name }}">Add</button>
+    </div>
+
+    {{- form_rest(form) -}}
+  </onlinq-collection>
+{%- endblock collection_widget -%}

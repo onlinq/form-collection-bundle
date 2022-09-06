@@ -1,30 +1,29 @@
-{%- block collection_widget -%}
+{%- block onlinq_collection_widget -%}
   {%- set attr = attr|merge({
     'name': form.vars.full_name,
-    'allow-add': allow_add,
-    'allow-delete': allow_delete,
-    'allow-move': allow_move ?? attr['allow-move'] ?? false,
-    'min': min ?? attr['min'] ?? 0,
-    'max': max ?? attr['max'] ?? 0,
+    'actions': collection_actions,
+    'actionlist': collection_action_list,
+    'min': min ?? 0,
+    'max': max ?? 0,
   }) -%}
 
   <onlinq-collection {{ block('widget_container_attributes') }}>
     {%- if prototype is defined and not prototype.rendered -%}
-      <template collection-prototype>
+      <template data-collection-prototype>
         {{- form_row(prototype) -}}
       </template>
     {%- endif -%}
 
     {%- set children = form|filter(child => not child.rendered) -%}
     {%- for child in children -%}
-      <onlinq-collection-entry collection-index="{{ child.vars.name }}">
+      <onlinq-collection-entry collection="{{ form.vars.full_name }}" collection-index="{{ child.vars.name }}">
         {{- form_row(child) -}}
       </onlinq-collection-entry>
     {%- endfor -%}
 
     <div slot="add">
       {%- if allow_add -%}
-        <button type="button" class="collection-add" collection-add>Add</button>
+        <button is="onlinq-collection-add" type="button" data-collection="{{ form.vars.full_name }}">Add</button>
       {%- endif -%}
     </div>
 
@@ -32,24 +31,22 @@
   </onlinq-collection>
 {%- endblock collection_widget -%}
 
-{%- block collection_entry_row -%}
-  {%- set allow_move = form.parent.vars.allow_move ?? form.parent.vars.attr['allow-move'] ?? false -%}
-
+{%- block onlinq_collection_entry_row -%}
   {{- block('form_row') -}}
 
   <span slot="move-up">
-    <button type="button" class="collection-move-up" collection-move-up>&uparrow;</button>
+    <button is="onlinq-collection-move-up" type="button" data-collection="{{ form.parent.vars.full_name }}">&uparrow;</button>
   </span>
   <span slot="move-down">
-    <button type="button" class="collection-move-down" collection-move-down>&downarrow;</button>
+    <button is="onlinq-collection-move-down" type="button" data-collection="{{ form.parent.vars.full_name }}">&downarrow;</button>
   </span>
   <span slot="delete">
-    <button type="button" class="collection-delete" collection-delete>Delete</button>
+    <button is="onlinq-collection-delete" type="button" data-collection="{{ form.parent.vars.full_name }}">Delete</button>
   </span>
 {%- endblock collection_entry_row -%}
 
 {%- block collection_entry_label -%}
-  {%- set label_attr = label_attr|merge({'collection-label': true}) -%}
+  {%- set label_attr = label_attr|merge({'data-collection-label': true}) -%}
 
   {{- block('form_label') -}}
 {%- endblock collection_entry_label -%}

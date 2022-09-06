@@ -1,1 +1,15 @@
-{% use '@OnlinqFormCollection/bootstrap_collection_theme.html.twig' %}
+{% use '@OnlinqFormCollection/bootstrap_base_collection_theme.html.twig' %}
+
+{%- block collection_entry_row -%}
+  {{- block('form_row') -}}
+
+  <span slot="move-up">
+    <button is="onlinq-collection-move-up" type="button" class="btn btn-light mr-2" data-collection="{{ form.parent.vars.full_name }}">&uparrow;</button>
+  </span>
+  <span slot="move-down">
+    <button is="onlinq-collection-move-down" type="button" class="btn btn-light mr-2" data-collection="{{ form.parent.vars.full_name }}">&downarrow;</button>
+  </span>
+  <span slot="delete">
+    <button is="onlinq-collection-delete" type="button" class="btn btn-light mr-2" data-collection="{{ form.parent.vars.full_name }}">Delete</button>
+  </span>
+{%- endblock collection_entry_row -%}
