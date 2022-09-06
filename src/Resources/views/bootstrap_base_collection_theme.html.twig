@@ -1,6 +1,6 @@
 {% use '@OnlinqFormCollection/collection_theme.html.twig' %}
 
-{%- block collection_widget -%}
+{%- block onlinq_collection_widget -%}
   {%- set attr = attr|merge({
     'name': form.vars.full_name,
     'actions': collection_actions,
@@ -29,4 +29,4 @@
 
     {{- form_rest(form) -}}
   </onlinq-collection>
-{%- endblock collection_widget -%}
+{%- endblock onlinq_collection_widget -%}

@@ -29,7 +29,7 @@
 
     {{- form_rest(form) -}}
   </onlinq-collection>
-{%- endblock collection_widget -%}
+{%- endblock onlinq_collection_widget -%}
 
 {%- block onlinq_collection_entry_row -%}
   {{- block('form_row') -}}
@@ -43,10 +43,10 @@
   <span slot="delete">
     <button is="onlinq-collection-delete" type="button" data-collection="{{ form.parent.vars.full_name }}">Delete</button>
   </span>
-{%- endblock collection_entry_row -%}
+{%- endblock onlinq_collection_entry_row -%}
 
-{%- block collection_entry_label -%}
+{%- block onlinq_collection_entry_label -%}
   {%- set label_attr = label_attr|merge({'data-collection-label': true}) -%}
 
   {{- block('form_label') -}}
-{%- endblock collection_entry_label -%}
+{%- endblock onlinq_collection_entry_label -%}

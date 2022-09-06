@@ -1,6 +1,6 @@
 {% use '@OnlinqFormCollection/bootstrap_collection_theme.html.twig' %}
 
-{%- block collection_entry_row -%}
+{%- block onlinq_collection_entry_row -%}
   {{- block('form_row') -}}
 
   <span slot="move-up">
@@ -12,4 +12,4 @@
   <span slot="delete">
     <button is="onlinq-collection-delete" type="button" class="btn btn-light me-2" data-collection="{{ form.parent.vars.full_name }}">Delete</button>
   </span>
-{%- endblock collection_entry_row -%}
+{%- endblock onlinq_collection_entry_row -%}
