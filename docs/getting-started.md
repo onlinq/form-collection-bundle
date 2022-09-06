@@ -41,8 +41,13 @@ Form Collection web components. Learn more about using form themes in the
   A basic form theme adding support for form collections with custom stylable
   buttons.
 
-- `@OnlinqFormCollection/bootstrap_collection_theme.html.twig`  
-  A form theme with the appropriate CSS classes for use with the [Bootstrap CSS Framework][bootstrap].
+- `@OnlinqFormCollection/bootstrap_5_collection_theme.html.twig`  
+  A form theme with the appropriate CSS classes for use with version 5 of
+  the [Bootstrap CSS Framework][bootstrap].
+
+- `@OnlinqFormCollection/bootstrap_4_collection_theme.html.twig`  
+  A form theme with the appropriate CSS classes for use with version 4 of 
+  the [Bootstrap CSS Framework][bootstrap].
 
 To use one of the form themes globally, add it to the Twig Bundle configuration:
 

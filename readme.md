@@ -76,7 +76,8 @@ The bundle includes multiple built-in form themes to make collections look great
 without having to create your own styling:
 
 - `@OnlinqFormCollection/collection_theme.html.twig`
-- `@OnlinqFormCollection/bootstrap_collection_theme.html.twig`
+- `@OnlinqFormCollection/bootstrap_4_collection_theme.html.twig`
+- `@OnlinqFormCollection/bootstrap_5_collection_theme.html.twig`
 
 Learn more about the built-in form themes in the [documentation](./docs/getting-started.md#collection-form-themes).
 
