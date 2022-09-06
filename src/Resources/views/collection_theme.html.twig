@@ -5,6 +5,7 @@
     'actionlist': collection_action_list,
     'min': min ?? 0,
     'max': max ?? 0,
+    'prototype-actions': collection_actions,
   }) -%}
 
   <onlinq-collection {{ block('widget_container_attributes') }}>
@@ -16,7 +17,13 @@
 
     {%- set children = form|filter(child => not child.rendered) -%}
     {%- for child in children -%}
-      <onlinq-collection-entry collection="{{ form.vars.full_name }}" collection-index="{{ child.vars.name }}">
+      {%- set child_attr = {
+        'collection': form.vars.full_name,
+        'collection-index': child.vars.name,
+        'actions': collection_actions,
+      } -%}
+
+      <onlinq-collection-entry {% with {attr: child_attr} %}{{ block('widget_container_attributes') }}{% endwith %}>
         {{- form_row(child) -}}
       </onlinq-collection-entry>
     {%- endfor -%}
