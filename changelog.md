@@ -1,5 +1,13 @@
 # Changelog
 
+# 0.2.0 (2022-09-06)
+
+* Removed Symfony Flex integration.
+* Updated web components distribution to version 0.2.0.
+* Updated form themes.
+* Changed default block prefix of `OnlinqCollectionType` forms to
+  `onlinq_collection`.
+
 # 0.1.2 (2021-09-15)
 
 * Added Symfony Flex integration.
